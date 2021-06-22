@@ -180,14 +180,14 @@ let holidays = [];
 
 if (response.length !== 0) {
   result = Object.values(
-    response.length > 1 ? response.find(data => data['Год/Месяц'] === year.toString()) || response[0] : response[0],
+    response.length > 1 ? response.find((data) => data['Год/Месяц'] === year.toString()) || response[0] : response[0],
   ).slice(1, 13);
 }
 result.forEach((month, index) => {
   month
     .split(',')
-    .filter(item => /^\d*$/.test(item))
-    .forEach(day => {
+    .filter((item) => /^\d*$/.test(item))
+    .forEach((day) => {
       holidays.push(`${day.padStart(2, 0)}.${(index + 1).toString().padStart(2, 0)}.${year}`);
     });
 });
@@ -221,7 +221,7 @@ class DatePickerFormatting extends React.Component {
           <Select
             value={this.state.order}
             items={Object.keys(DateOrder)}
-            onValueChange={order => this.setState({ order })}
+            onValueChange={(order) => this.setState({ order })}
           />
         </div>
         <div>
@@ -231,7 +231,7 @@ class DatePickerFormatting extends React.Component {
           <Select
             value={this.state.separator}
             items={Object.keys(DateSeparator)}
-            onValueChange={separator => this.setState({ separator })}
+            onValueChange={(separator) => this.setState({ separator })}
           />
         </div>
         <LocaleContext.Provider
@@ -245,7 +245,7 @@ class DatePickerFormatting extends React.Component {
             },
           }}
         >
-          <DatePicker onValueChange={value => this.setState({ value })} value={this.state.value} />
+          <DatePicker onValueChange={(value) => this.setState({ value })} value={this.state.value} />
         </LocaleContext.Provider>
       </Gapped>
     );

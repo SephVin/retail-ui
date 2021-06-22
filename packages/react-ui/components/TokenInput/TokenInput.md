@@ -4,12 +4,12 @@ import { TokenInputType } from '@skbkontur/react-ui/components/TokenInput';
 
 const [selectedItems, setSelectedItems] = React.useState([]);
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
-const getItems = q =>
+const getItems = (q) =>
   Promise.resolve(
     ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth'].filter(
-      x => x.toLowerCase().includes(q.toLowerCase()) || x.toString(10) === q,
+      (x) => x.toLowerCase().includes(q.toLowerCase()) || x.toString(10) === q,
     ),
   ).then(delay(500));
 

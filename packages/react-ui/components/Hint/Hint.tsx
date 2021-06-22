@@ -105,7 +105,7 @@ export class Hint extends React.Component<HintProps, HintState> {
   public render() {
     return (
       <ThemeContext.Consumer>
-        {theme => {
+        {(theme) => {
           this.theme = theme;
           return (
             <ThemeContext.Provider
@@ -166,7 +166,7 @@ export class Hint extends React.Component<HintProps, HintState> {
   }
 
   private getPositions = (): PopupPosition[] => {
-    return Positions.filter(x => x.startsWith(this.props.pos));
+    return Positions.filter((x) => x.startsWith(this.props.pos));
   };
 
   private handleMouseEnter = (e: MouseEventType) => {

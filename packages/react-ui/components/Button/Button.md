@@ -68,7 +68,7 @@ import { Button } from '@skbkontur/react-ui';
 const [loading, setLoading] = React.useState(false);
 const [success, setSuccess] = React.useState(false);
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
 const handleLoadingStart = () => {
   delay(2000)()

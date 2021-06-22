@@ -36,7 +36,7 @@ interface LocaleControls {
 ```jsx harmony
 import { LangCodes, LocaleContext, TokenInput, TokenInputType } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
 <LocaleContext.Provider value={{ langCode: LangCodes.en_GB }}>
   <TokenInput type={TokenInputType.Combined} getItems={() => Promise.resolve([]).then(delay(500))} />
@@ -48,7 +48,7 @@ const delay = time => args => new Promise(resolve => setTimeout(resolve, time, a
 ```jsx harmony
 import { LocaleContext, TokenInput, TokenInputType } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
 const customLocale = {
   TokenInput: {
@@ -68,7 +68,7 @@ const customLocale = {
 ```jsx harmony
 import { Gapped, LangCodes, LocaleContext, Spinner, TokenInput } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
 const customLocale = {
   Spinner: {
@@ -125,7 +125,7 @@ import {
 } from '@skbkontur/react-ui';
 import { TokenInputType } from '@skbkontur/react-ui/components/TokenInput';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
 const items = [
   { label: 'aaa', value: 1 },
@@ -165,13 +165,13 @@ class LocalizationControls extends React.Component {
           value={this.state.langCode}
           placeholder="Выбрать язык"
           items={Object.values(LangCodes)}
-          onValueChange={langCode => this.setState({ langCode })}
+          onValueChange={(langCode) => this.setState({ langCode })}
         />
         <Select
           value={this.state.controlName}
           placeholder="Выбрать контрол"
           items={Object.values(LocalizationControlNames)}
-          onValueChange={controlName => this.setState({ controlName })}
+          onValueChange={(controlName) => this.setState({ controlName })}
         />
         <LocaleContext.Provider value={{ langCode: this.state.langCode, locale: locale }}>
           {this.getControl(this.state.controlName)}
@@ -185,7 +185,7 @@ class LocalizationControls extends React.Component {
       case LocalizationControlNames.ComboBox:
         return (
           <ComboBox
-            getItems={str => Promise.resolve(items.filter(({ label }) => label.includes(str))).then(delay(500))}
+            getItems={(str) => Promise.resolve(items.filter(({ label }) => label.includes(str))).then(delay(500))}
             onValueChange={({ label: langCode }) => this.setState({ langCode })}
           />
         );
@@ -206,7 +206,7 @@ class LocalizationControls extends React.Component {
         return <Select />;
 
       case LocalizationControlNames.Paging:
-        return <Paging activePage={1} pagesCount={12} onPageChange={value => value} />;
+        return <Paging activePage={1} pagesCount={12} onPageChange={(value) => value} />;
     }
     return null;
   }

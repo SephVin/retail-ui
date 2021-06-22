@@ -5,7 +5,7 @@
 ```jsx harmony
 const [value, setValue] = React.useState();
 
-<DateInput value={value} onValueChange={setValue} />
+<DateInput value={value} onValueChange={setValue} />;
 ```
 
 ```jsx harmony
@@ -36,11 +36,11 @@ class DateInputFormatting2 extends React.Component {
             value={this.state.langCode}
             placeholder="Выбрать язык"
             items={Object.values(LangCodes)}
-            onValueChange={langCode => this.setState({ langCode })}
+            onValueChange={(langCode) => this.setState({ langCode })}
           />
         </div>
         <LocaleContext.Provider value={{ langCode: this.state.langCode }}>
-          <DateInput onValueChange={value => this.setState({ value })} value={this.state.value} />
+          <DateInput onValueChange={(value) => this.setState({ value })} value={this.state.value} />
         </LocaleContext.Provider>
       </Gapped>
     );
@@ -74,7 +74,7 @@ class DateInputFormatting extends React.Component {
           <Select
             value={this.state.order}
             items={Object.keys(DateOrder)}
-            onValueChange={order => this.setState({ order })}
+            onValueChange={(order) => this.setState({ order })}
           />
         </div>
         <div>
@@ -84,18 +84,20 @@ class DateInputFormatting extends React.Component {
           <Select
             value={this.state.separator}
             items={Object.keys(DateSeparator)}
-            onValueChange={separator => this.setState({ separator })}
+            onValueChange={(separator) => this.setState({ separator })}
           />
         </div>
-        <LocaleContext.Provider value={{
-          locale:{
-            DatePicker: {
-              separator: DateSeparator[this.state.separator],
-              order: this.state.order,
+        <LocaleContext.Provider
+          value={{
+            locale: {
+              DatePicker: {
+                separator: DateSeparator[this.state.separator],
+                order: this.state.order,
+              },
             },
-          }}}
+          }}
         >
-          <DateInput onValueChange={value => this.setState({ value })} value={this.state.value} />
+          <DateInput onValueChange={(value) => this.setState({ value })} value={this.state.value} />
         </LocaleContext.Provider>
       </Gapped>
     );

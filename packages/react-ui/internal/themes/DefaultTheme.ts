@@ -794,8 +794,7 @@ export class DefaultTheme {
   //#endregion
   //#region Dropdown
   public static dropdownMenuSelectedBg = '#f1f1f1'; //deprecated
-  public static get dropdownMenuHoverBg() //deprecated
-  {
+  public static get dropdownMenuHoverBg() { //deprecated
     return this.bgActive;
   }
   //#endregion
@@ -818,10 +817,12 @@ export class DefaultTheme {
   public static menuItemIconLegacyMargin = '7px';
   public static menuItemIconLegacyShift = '-1px';
   public static get menuItemPaddingForIcon() {
-    return `${parseInt(this.menuItemPaddingX) +
+    return `${
+      parseInt(this.menuItemPaddingX) +
       parseInt(this.menuItemIconWidth) +
       parseInt(this.menuItemIconGap) +
-      parseInt(this.menuItemIconLegacyMargin)}px`;
+      parseInt(this.menuItemIconLegacyMargin)
+    }px`;
   }
   public static menuItemLineHeight = '18px';
   public static get menuItemFontSize() {

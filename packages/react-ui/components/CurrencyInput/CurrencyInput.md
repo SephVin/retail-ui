@@ -1,7 +1,7 @@
 ```jsx harmony
 const [value, setValue] = React.useState();
 
-<CurrencyInput value={value} fractionDigits={3} onValueChange={setValue} />
+<CurrencyInput value={value} fractionDigits={3} onValueChange={setValue} />;
 ```
 
 `fractionDigits={15}`
@@ -9,7 +9,7 @@ const [value, setValue] = React.useState();
 ```jsx harmony
 const [value, setValue] = React.useState();
 
-<CurrencyInput value={value} fractionDigits={15} onValueChange={setValue} />
+<CurrencyInput value={value} fractionDigits={15} onValueChange={setValue} />;
 ```
 
 ---

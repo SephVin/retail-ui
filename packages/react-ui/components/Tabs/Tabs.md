@@ -13,17 +13,17 @@ const [active, setActive] = React.useState('fuji');
 ```jsx harmony
 const [active, setActive] = React.useState('/fuji');
 
-const NavLink = props => (
+const NavLink = (props) => (
   <a
     {...props}
-    onClick={e => {
+    onClick={(e) => {
       e.preventDefault();
       props.onClick(e);
     }}
   />
 );
 const TabLink = ({ id, children }) => (
-  <Tabs.Tab id={id} component={props => <NavLink {...props} to={props.id} />}>
+  <Tabs.Tab id={id} component={(props) => <NavLink {...props} to={props.id} />}>
     {children}
   </Tabs.Tab>
 );

@@ -5,9 +5,7 @@ import { getScrollWidth } from '../../lib/dom/getScrollWidth';
 export class HideBodyVerticalScroll extends React.Component {
   public static __KONTUR_REACT_UI__ = 'HideBodyVerticalScroll';
 
-  public static hash = Math.random()
-    .toString(16)
-    .slice(2, 6);
+  public static hash = Math.random().toString(16).slice(2, 6);
   private disposeDocumentStyle: (() => void) | null = null;
   private initialScroll = 0;
   private master = false;

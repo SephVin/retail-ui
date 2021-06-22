@@ -107,7 +107,7 @@ function StickyWithWideContainer() {
   );
 }
 
-const withThinContainer: DecoratorFn = story => <div style={{ width: 200 }}>{story()}</div>;
+const withThinContainer: DecoratorFn = (story) => <div style={{ width: 200 }}>{story()}</div>;
 
 export default { title: 'Sticky' };
 
@@ -117,7 +117,7 @@ WideContainer.story = {
     creevey: {
       tests: {
         async fixed() {
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const stickyContent = window.document.querySelector('[data-tid="stickyContent"]');
             const nonStickyText = window.document.querySelector('[data-tid="nonStickyText"]');
             // @ts-ignore
@@ -144,7 +144,7 @@ Top.story = {
           await this.expect(await this.browser.takeScreenshot()).to.matchImage('top');
         },
         async fixed() {
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const stickyStop = window.document.querySelector('[data-tid="stickyStop"]');
             // @ts-ignore
             const scrollOffset = stickyStop.getBoundingClientRect().top - window.innerHeight / 2;
@@ -154,12 +154,12 @@ Top.story = {
           await this.expect(await this.browser.takeScreenshot()).to.matchImage('fixed');
         },
         async stoped() {
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const stickyStop = window.document.querySelector('[data-tid="stickyStop"]');
             // @ts-ignore
             stickyStop.scrollIntoView();
           });
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const stickyContent = window.document.querySelector('[data-tid="stickyContent"]');
             // @ts-ignore
             const scrollOffset = pageYOffset - stickyContent.getBoundingClientRect().height / 2;
@@ -180,13 +180,13 @@ Bottom.story = {
     creevey: {
       tests: {
         async bottom() {
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             window.scrollTo(0, 9999);
           });
           await this.expect(await this.browser.takeScreenshot()).to.matchImage('bottom');
         },
         async fixed() {
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const sticky = window.document.querySelector('[data-comp-name~="Sticky"]');
             // @ts-ignore
             const scrollOffset = sticky.getBoundingClientRect().top - window.innerHeight;
@@ -196,12 +196,12 @@ Bottom.story = {
           await this.expect(await this.browser.takeScreenshot()).to.matchImage('fixed');
         },
         async stoped() {
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const stickyStop = window.document.querySelector('[data-tid="stickyStop"]');
             // @ts-ignore
             stickyStop.scrollIntoView(false);
           });
-          await this.browser.executeScript(function() {
+          await this.browser.executeScript(function () {
             const stickyContent = window.document.querySelector('[data-tid="stickyContent"]');
             // @ts-ignore
             const scrollOffset = pageYOffset + stickyContent.getBoundingClientRect().height / 2;

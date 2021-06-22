@@ -26,14 +26,14 @@ var absStyle = {
 <div>
   <div style={divStyle}>
     <ScrollContainer>
-      {items(20).map(i => (
+      {items(20).map((i) => (
         <div key={i}>{i}</div>
       ))}
     </ScrollContainer>
   </div>
   <div style={{ ...divStyle, background: '#888' }}>
     <ScrollContainer invert>
-      {items(20).map(i => (
+      {items(20).map((i) => (
         <div key={i}>{i}</div>
       ))}
     </ScrollContainer>
@@ -41,7 +41,7 @@ var absStyle = {
   <div style={divStyle}>
     <div style={absStyle}>
       <ScrollContainer>
-        {items(3).map(i => (
+        {items(3).map((i) => (
           <div key={i}>{i}</div>
         ))}
       </ScrollContainer>
@@ -50,7 +50,7 @@ var absStyle = {
   <div style={divStyle}>
     <div style={absStyle}>
       <ScrollContainer maxHeight={150}>
-        {items(30).map(i => (
+        {items(30).map((i) => (
           <div key={i}>{i}</div>
         ))}
       </ScrollContainer>
@@ -84,7 +84,7 @@ var innerStyle = {
 
 <div style={containerStyle}>
   <ScrollContainer>
-    {items(20).map(i => (
+    {items(20).map((i) => (
       <div style={innerStyle} key={i}>
         {i}
       </div>

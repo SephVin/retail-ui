@@ -1,7 +1,14 @@
 ```jsx harmony
 const [value, setValue] = React.useState();
 
-const items = [Select.static(() => <Select.Item>Not selectable</Select.Item>), 'One', 'Two', 'Three', Select.SEP, 'Four'];
+const items = [
+  Select.static(() => <Select.Item>Not selectable</Select.Item>),
+  'One',
+  'Two',
+  'Three',
+  Select.SEP,
+  'Four',
+];
 
 <Select items={items} value={value} onValueChange={setValue} />;
 ```
@@ -14,9 +21,16 @@ import PeopleIcon from '@skbkontur/react-icons/People';
 
 const [value, setValue] = React.useState();
 
-const  items = [Select.static(() => <Select.Item>Not selectable</Select.Item>), 'One', 'Two', 'Three', Select.SEP, 'Four'];
+const items = [
+  Select.static(() => <Select.Item>Not selectable</Select.Item>),
+  'One',
+  'Two',
+  'Three',
+  Select.SEP,
+  'Four',
+];
 
-const renderLinkButton = params => {
+const renderLinkButton = (params) => {
   const linkProps = {
     disabled: params.disabled,
     icon: <PeopleIcon />,
@@ -30,12 +44,7 @@ const renderLinkButton = params => {
   return <Link {...linkProps}>{params.label}</Link>;
 };
 
-<Select
-  items={items}
-  value={value}
-  onValueChange={setValue}
-  _renderButton={renderLinkButton}
-/>;
+<Select items={items} value={value} onValueChange={setValue} _renderButton={renderLinkButton} />;
 ```
 
 #### Локали по умолчанию

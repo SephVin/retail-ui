@@ -6,5 +6,6 @@
         "import/no-default-export": 0
       }
     }
-  ]
+  ],
+  "extends": ["prettier"]
 }

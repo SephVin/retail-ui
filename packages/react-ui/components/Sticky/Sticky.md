@@ -8,7 +8,7 @@ let stop = null;
 
 <div>
   <Sticky side="top" getStop={() => stop}>
-    {fixed => (
+    {(fixed) => (
       <div style={style}>
         Small loan of a million dollars
         {fixed ? ' fixed' : <div>not fixed</div>}
@@ -17,7 +17,7 @@ let stop = null;
   </Sticky>
   Great
   <div style={{ height: 1000 }} />
-  <div ref={el => (stop = el)} style={{ borderTop: '1px solid #000' }} />
+  <div ref={(el) => (stop = el)} style={{ borderTop: '1px solid #000' }} />
   <div style={{ height: 1000 }} />
   <Sticky side="bottom" getStop={() => stop} offset={20}>
     <div style={style}>Make America Great Again</div>

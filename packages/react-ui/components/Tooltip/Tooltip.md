@@ -126,7 +126,7 @@ class UseManualTooltip extends React.Component {
           render={() => 'Manual tooltip'}
           pos="bottom center"
           trigger="manual"
-          ref={element => {
+          ref={(element) => {
             this.tooltip = element;
           }}
         >
@@ -277,7 +277,7 @@ class AnchorTooltipExample extends React.Component {
             <div key={i} style={{ top, left, display: 'inline-block', position: 'absolute' }}>
               <div
                 style={blockStyle}
-                onMouseEnter={event => this.setState({ anchor: event.target })}
+                onMouseEnter={(event) => this.setState({ anchor: event.target })}
                 onMouseLeave={() => this.setState({ anchor: null })}
               />
             </div>

@@ -3,11 +3,11 @@ Combobox with error handling
 ```jsx harmony
 import { Tooltip } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
-let maybeReject = x => (Math.random() * 3 < 1 ? Promise.reject() : Promise.resolve(x));
+let maybeReject = (x) => (Math.random() * 3 < 1 ? Promise.reject() : Promise.resolve(x));
 
-let getItems = q =>
+let getItems = (q) =>
   Promise.resolve(
     [
       { value: 1, label: 'First' },
@@ -16,7 +16,7 @@ let getItems = q =>
       { value: 4, label: 'Fourth' },
       { value: 5, label: 'Fifth' },
       { value: 6, label: 'Sixth' },
-    ].filter(x => x.label.toLowerCase().includes(q.toLowerCase()) || x.value.toString(10) === q),
+    ].filter((x) => x.label.toLowerCase().includes(q.toLowerCase()) || x.value.toString(10) === q),
   )
     .then(delay(500))
     .then(maybeReject);
@@ -24,7 +24,7 @@ let getItems = q =>
 const [selected, setSelected] = React.useState({ value: 3, label: 'Third' });
 const [error, setError] = React.useState(false);
 
-let handleValueChange = value => {
+let handleValueChange = (value) => {
   setSelected(value);
   setError(false);
 };
@@ -68,12 +68,12 @@ let mapCity = ({ Id, City }) => ({
   label: City,
 });
 
-let hasSelectedItem = itemsSets => itemsSets.some(items => items.find(item => value.value === item.Id));
+let hasSelectedItem = (itemsSets) => itemsSets.some((items) => items.find((item) => value.value === item.Id));
 
 let shouldInsertSelectedItem = (query, items) => value && !query && !hasSelectedItem([items, popularItems]);
 
-let getPopularItems = query => (query ? [] : popularItems.map(mapCity));
-let renderSeparator = query => (query ? [] : <MenuSeparator />);
+let getPopularItems = (query) => (query ? [] : popularItems.map(mapCity));
+let renderSeparator = (query) => (query ? [] : <MenuSeparator />);
 let getSelectedItem = (query, items) => (!shouldInsertSelectedItem(query, items) ? [] : value);
 
 let prepareItems = (query, items) =>
@@ -88,7 +88,7 @@ let renderTotalCount = (foundCount, totalCount) =>
     []
   );
 
-let getItems = query =>
+let getItems = (query) =>
   getCities(query).then(({ foundItems, totalCount }) =>
     [].concat(
       getPopularItems(query),
@@ -99,7 +99,7 @@ let getItems = query =>
     ),
   );
 
-let renderItem = item => (
+let renderItem = (item) => (
   <Gapped>
     <div style={{ width: 40 }}>{item.value}</div>
     <div style={{ width: 210, whiteSpace: 'normal' }}>{item.label}</div>
@@ -121,9 +121,9 @@ let renderItem = item => (
 import OkIcon from '@skbkontur/react-icons/Ok';
 import { Tooltip } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
-const getItems = q =>
+const getItems = (q) =>
   Promise.resolve(
     [
       { approved: true, value: 1, label: 'Леонид Долецкий', email: 'first@skbkontur.ru' },
@@ -132,7 +132,7 @@ const getItems = q =>
       { approved: false, value: 4, label: 'Надежда Дубова', email: 'fourth@skbkontur.ru' },
       { approved: true, value: 5, label: 'Владислав Сташкеевич', email: 'fifth@skbkontur.ru' },
       { approved: true, value: 6, label: 'Василиса Поволоцкая', email: 'sixth@skbkontur.ru' },
-    ].filter(x => x.label.toLowerCase().includes(q.toLowerCase()) || x.value.toString(10) === q),
+    ].filter((x) => x.label.toLowerCase().includes(q.toLowerCase()) || x.value.toString(10) === q),
   ).then(delay(500));
 
 const [selected, setSelected] = React.useState({
@@ -143,7 +143,7 @@ const [selected, setSelected] = React.useState({
 });
 const [error, setError] = React.useState(false);
 
-const handleValueChange = value => {
+const handleValueChange = (value) => {
   setSelected(value);
   setError(false);
 };
@@ -155,7 +155,7 @@ const handleUnexpectedInput = () => {
 
 const handleFocus = () => setError(false);
 
-const customRenderItem = item => (
+const customRenderItem = (item) => (
   <div
     style={{
       display: 'flex',
@@ -194,7 +194,7 @@ const customRenderItem = item => (
   </div>
 );
 
-const customRenderValue = item => (
+const customRenderValue = (item) => (
   <div
     style={{
       display: 'flex',
@@ -240,9 +240,9 @@ const customRenderValue = item => (
 ```jsx harmony
 import { Tooltip } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
-const getItems = query =>
+const getItems = (query) =>
   Promise.resolve(
     [
       { value: 1, label: 'First' },
@@ -252,7 +252,7 @@ const getItems = query =>
       { value: 5, label: 'Fifth' },
       { value: 6, label: 'Sixth' },
     ]
-      .filter(x => x.label.toLowerCase().includes(query.toLowerCase()) || x.value.toString(10) === query)
+      .filter((x) => x.label.toLowerCase().includes(query.toLowerCase()) || x.value.toString(10) === query)
       .map(({ label, ...rest }) => {
         const start = label.toLowerCase().indexOf(query.toLowerCase());
         const end = start + query.length;
@@ -281,7 +281,7 @@ const getItems = query =>
 const [selected, setSelected] = React.useState({ value: 3, label: 'Third' });
 const [error, setError] = React.useState(false);
 
-let handleValueChange = value => {
+let handleValueChange = (value) => {
   setSelected(value);
   setError(false);
 };
@@ -293,7 +293,7 @@ let handleUnexpectedInput = () => {
 
 let handleFocus = () => setError(false);
 
-const renderItem = item => {
+const renderItem = (item) => {
   if (item.highlightedLabel) {
     return item.highlightedLabel;
   }
@@ -320,7 +320,7 @@ const renderItem = item => {
 ```jsx harmony
 import { MenuItem } from '@skbkontur/react-ui';
 
-const delay = time => args => new Promise(resolve => setTimeout(resolve, time, args));
+const delay = (time) => (args) => new Promise((resolve) => setTimeout(resolve, time, args));
 
 class ComboboxExample extends React.Component {
   constructor(props) {
@@ -370,12 +370,12 @@ class ComboboxExample extends React.Component {
 
   getItems(q) {
     return Promise.resolve(
-      this.state.items.filter(x => x.label.toLowerCase().includes(q.toLowerCase()) || x.value.toString(10) === q),
+      this.state.items.filter((x) => x.label.toLowerCase().includes(q.toLowerCase()) || x.value.toString(10) === q),
     ).then(delay(500));
   }
 
   handleInputValueChange(query) {
-    const isItemExists = this.state.items.find(x => x.label.toLowerCase() == query.toLowerCase());
+    const isItemExists = this.state.items.find((x) => x.label.toLowerCase() == query.toLowerCase());
     this.setState({ query, shouldRenderAddButton: !isItemExists });
   }
 
@@ -403,7 +403,7 @@ class ComboboxExample extends React.Component {
   }
 
   addItem() {
-    this.setState(currentState => {
+    this.setState((currentState) => {
       const newItem = {
         value: Math.max(...currentState.items.map(({ value }) => value)) + 1,
         label: currentState.query,

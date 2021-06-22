@@ -14,16 +14,14 @@
 - <input type="checkbox" readonly/> Дизайн решения по отправке телеметрии. [#1566](https://github.com/skbkontur/retail-ui/issues/1566)
 - <input type="checkbox" readonly/> Встраивание метрик [#1555](https://github.com/skbkontur/retail-ui/issues/1555)
 
-
 ### 2.4 Август 2020
 
 - <input type="checkbox" readonly checked/> Первый этап дизайн-решения по сбору телеметрии — пакет React Sorge. [#1539](https://github.com/skbkontur/retail-ui/issues/1539)
 - <input type="checkbox" readonly checked/> Создание и выпуск темы с новыми размерами контролов для поддержки 8px сетки по Контур.Гайдам. [#1733](https://github.com/skbkontur/retail-ui/issues/1733)
 
-
 ### 2.0.0 Март 2020
 
-- <input type="checkbox" readonly checked/> Релиз версии [2.0](https://github.com/skbkontur/retail-ui/blob/master/packages/react-ui/MIGRATION.md) 
+- <input type="checkbox" readonly checked/> Релиз версии [2.0](https://github.com/skbkontur/retail-ui/blob/master/packages/react-ui/MIGRATION.md)
 - <input type="checkbox" readonly checked/> Уменьшение техдолга [#1578](https://github.com/skbkontur/retail-ui/issues/1578)
 - <input type="checkbox" readonly checked/> Переезд всех стилей с Less на CSS-in-JS [#1625](https://github.com/skbkontur/retail-ui/issues/1625)
 - <input type="checkbox" readonly checked/> Перенос kontur-specific компонентов в приватную библиотеку (Fias, TopBar, Logotype, Spinner) [#1842](https://github.com/skbkontur/retail-ui/issues/1842)
@@ -34,7 +32,7 @@
 
 ### Декабрь 2019
 
-- <input type="checkbox" readonly checked/> Создание отдельного репозитория для «велосипедов» (парковка для обеконтуровских решений для фронта), в которую пойдет приватная библиотека для kontur-specific компонентов типа Fias, TopBar, Logotype, Spinner. 
+- <input type="checkbox" readonly checked/> Создание отдельного репозитория для «велосипедов» (парковка для обеконтуровских решений для фронта), в которую пойдет приватная библиотека для kontur-specific компонентов типа Fias, TopBar, Logotype, Spinner.
 - <input type="checkbox" readonly checked/> Обновление react-styleguidist и примеров в доке [#1791](https://github.com/skbkontur/retail-ui/issues/1791)
 
 ### Ноябрь 2019
@@ -59,9 +57,9 @@
 
 ### Июнь 2019
 
-- <input type="checkbox" readonly checked/> Старт поддержки `LTS` версии библиотеки [#1295](https://github.com/skbkontur/retail-ui/issues/1295) 
+- <input type="checkbox" readonly checked/> Старт поддержки `LTS` версии библиотеки [#1295](https://github.com/skbkontur/retail-ui/issues/1295)
 - <input type="checkbox" readonly checked/> Локализация DateInput и DatePicker [#1278](https://github.com/skbkontur/retail-ui/pull/1278)
-- <input type="checkbox" readonly checked/> Реализация механизма кастомизации на `css-in-js` [#1318](https://github.com/skbkontur/retail-ui/issues/1318) 
+- <input type="checkbox" readonly checked/> Реализация механизма кастомизации на `css-in-js` [#1318](https://github.com/skbkontur/retail-ui/issues/1318)
 
 ### Май 2019
 
@@ -71,7 +69,7 @@
 ### Апрель 2019
 
 - <input type="checkbox" readonly checked/> Добавлены скриншотные тесты на плоскую тему [#1253](https://github.com/skbkontur/retail-ui/pull/1253)
-- <input type="checkbox" readonly checked/> Ссылки со стайлгайдиста на ишьюс гитхаба и гайды  [#1376](https://github.com/skbkontur/retail-ui/pull/1376)
+- <input type="checkbox" readonly checked/> Ссылки со стайлгайдиста на ишьюс гитхаба и гайды [#1376](https://github.com/skbkontur/retail-ui/pull/1376)
 
 ### Март 2019
 

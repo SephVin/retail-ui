@@ -29,8 +29,8 @@ class IndeterminateExample extends React.Component {
           <Checkbox
             initialIndeterminate
             checked={this.state.checked}
-            onValueChange={checked => this.setState({ checked })}
-            ref={element => {
+            onValueChange={(checked) => this.setState({ checked })}
+            ref={(element) => {
               this.checkboxInstance = element;
             }}
           >

@@ -12,8 +12,7 @@ function renderModal() {
         <p>Use rxjs operators with react hooks</p>
 
         <div>
-          <Toggle checked={panel} onValueChange={setPanel} /> Panel{' '}
-          {panel ? 'enabled' : 'disabled'}
+          <Toggle checked={panel} onValueChange={setPanel} /> Panel {panel ? 'enabled' : 'disabled'}
         </div>
       </Modal.Body>
       <Modal.Footer panel={panel}>

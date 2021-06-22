@@ -27,7 +27,7 @@ class Toaster extends React.Component {
     return (
       <div>
         <Toast
-          ref={el => {
+          ref={(el) => {
             this.notifier = el;
           }}
         />
