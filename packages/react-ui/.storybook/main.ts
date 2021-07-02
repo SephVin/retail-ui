@@ -1,5 +1,5 @@
 module.exports = {
-  addons: ['@storybook/addon-actions/register', '@storybook/addon-links/register', 'creevey'],
+  addons: ['creevey', '@storybook/addon-essentials', '@storybook/addon-links/register'],
   stories: ['../components/**/*.stories.tsx', '../internal/**/*.stories.tsx'],
   typescript: {
     reactDocgen: 'none',
